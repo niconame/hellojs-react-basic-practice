@@ -1,4 +1,3 @@
-var React = require('react');
 
 class Counter extends React.Component {
   constructor(props) {

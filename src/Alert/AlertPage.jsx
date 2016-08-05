@@ -1,13 +1,20 @@
-var React = require('react');
 var AlertButton = require('Alert/AlertButton.jsx');
 
 class AlertPage extends React.Component {
   render() {
+    var texts = ['hi','mylove','Moomoo','Shras'];
     return (
       <div>
-        <AlertButton text='hello'/>
-        <AlertButton text='zet'/>
-        <AlertButton text='moomoo'/>
+        {texts.map((t,index)=>{
+          return <AlertButton key={index} texts={t}/>;
+        })}
+        {(()=> {
+          if (texts.length >= 3) {
+            return <button>true</button>;
+          } else {
+            return <button>false</button>;
+          }
+        })()}
       </div>
     );
   }
